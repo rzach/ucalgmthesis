@@ -1,17 +1,26 @@
 % A Sample Thesis for the University of Calgary
 % =============================================
 
-% Load the UCalgary Memoir Thesis class. By default, this produces a
-% 1-1/2 spaced thesis in 11 point Computer Modern font without running
+% Load the UCalgary Memoir Thesis class. By default (without options),
+% this produces a 1-1/2 spaced thesis in 11 point font without running
 % heads. Use package options singlespaced or doublespaced for single
-% or double line spacing. Use package options times, palatino,
-% libertine, garamond, or utopia for other nice typefaces. Use package
-% option headers if you want running heads. You can also use any
-% options that the memoir class recognizes, such as 12pt for 12 point
-% type, etc. Documentation of the memoir package can be found at
+% or double line spacing. The default font is LaTeX's Computer
+% Modern. Use package options times, palatino, libertine, garamond, or
+% utopia for other nice typefaces. (You may need to install the
+% relevant packages to get these to work.) Use package option headers
+% if you want running heads. Use option fullpage if you want the text
+% to occupy all allowable space (1 inch margins all around), or option
+% manuscript if you want a page layout suitable for reviewing and
+% proof reading. Option manuscript selects 12 pt type, doublespaced,
+% approx. 25 lines per page, with approx. 72 characters per line. You
+% may want to remove the option for the version you file in the Vault;
+% it looks nicer and is a bit more compact. You can also use any
+% options that the memoir class recognizes, such as 10pt for 10 point
+% font, 11pt for 11 point font, 12pt for 12 point type,
+% etc. Documentation of the memoir package can be found at
 % https://ctan.org/pkg/memoir?lang=en
 
-\documentclass[garamond,headers]{ucalgmthesis}
+\documentclass[utopia,headers,manuscript]{ucalgmthesis}
 
 % Using LaTeX? Then you're probably using math, and so you want to use
 % the AMS math commands and define some theorem environments! But you
@@ -101,9 +110,9 @@
 
 \makepagenote
 
-% Often you only want a single chapter output so you can send it to
+% Often you only want to output a single chapter so you can send it to
 % your supervisor. Use includeonly and make sure everything you don't
-% always want compiled to PDF is included in a separate file. For
+% always want compiled to PDF is include'd from a separate file. For
 % instance, to produce a PDF only of chapter 1, endnotes and
 % bibliography, say
 
@@ -118,18 +127,18 @@
 
 \frontmatter
 
-% titlepage.txt just makes the titlepage; it's in its own file so you
+% titlepage.tex just makes the titlepage; it's in its own file so you
 % can typeset it alone using includeonly.
 
 \include{titlepage}
 
-% frontmatter.tex contains the abstract, preface,
-% acknowledgments, table of contents, list of tables, etc.
+% frontmatter.tex contains the abstract, preface, acknowledgments, and
+% the commands to produce the table of contents, list of tables, etc.
 
 \include{frontmatter}
 
 % The main matter of the thesis contains the actual content, separated
-% into chapters
+% into chapters.
 
 \mainmatter
 
@@ -137,14 +146,15 @@
 
 \include{chapter2}
 
-% The back matter includes endnotes, index, glossary, bibiliography,
-% and the like.
+% The back matter includes commands to produce endnotes, index,
+% glossary, bibiliography, and the like.
 
 \backmatter
 
 \include{backmatter}
 
-% The appendix contains material that would clutter up the main text
+% The appendix contains material that would clutter up the main
+% text. Remove it if you don't have an appendix.
 
 \appendix
 

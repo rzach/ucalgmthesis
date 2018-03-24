@@ -1,6 +1,6 @@
-% ucalgmthesis class
-% ==================
-% 
+% ucalgmthesis class ================== A LaTeX class for producing
+% thesis documents confomrin to the University of Calgary Faculty of
+% Graduate Study formatting rules.
 
 \ProvidesClass{ucalgmthesis}[2017/03/23
   University of Calgary Memoir Thesis Class]
@@ -22,22 +22,64 @@
 
 % Options for typefaces
 
-\DeclareOption{palatino}{\AtEndOfClass{\usepackage{newpxtext,newpxmath}}}
-\DeclareOption{times}{\AtEndOfClass{\usepackage{newtxtext,newtxmath}}}
-\DeclareOption{garamond}{\AtEndOfClass{\usepackage[garamond]{mathdesign}}}
-\DeclareOption{utopia}{\AtEndOfClass{\usepackage[utopia]{mathdesign}}}
-\DeclareOption{libertine}{\AtEndOfClass{\usepackage{libertine}
-  \usepackage[libertine]{newtxmath}}}
-
+\DeclareOption{palatino}
+              {\AtEndOfClass{\usepackage[T1]{fontenc}
+                  \usepackage{amsthm} % load amsthm before newpxmath
+                  \usepackage{newpxtext,newpxmath}}}
+\DeclareOption{times}
+              {\AtEndOfClass{\usepackage[T1]{fontenc}
+                  \usepackage{amsthm} % load amsthm before newtxmath
+                  \usepackage{newtxtext,newtxmath}}}
+\DeclareOption{garamond}
+              {\AtEndOfClass{\usepackage[garamond]{mathdesign}
+                  \usepackage[osf]{garamondx}}}
+\DeclareOption{utopia}
+              {\AtEndOfClass{\usepackage[T1]{fontenc}
+                  \usepackage[utopia]{mathdesign}}}
+\DeclareOption{libertine}
+              {\AtEndOfClass{\usepackage[T1]{fontenc}
+                  \usepackage{amsthm} % load amsthm before newtxmath
+                  \usepackage{libertine}
+                  \usepackage[libertine]{newtxmath}}}
+              
 % options for headings
 
 \DeclareOption{plain}{\AtBeginDocument{\pagestyle{plain}}}
 \DeclareOption{headers}{\AtBeginDocument{\pagestyle{ucalgaryruled}}}
 
-%% All other options are passed to the base class directly.
+% options for the typeblock
+
+% fullpage uses the entire space available: 1 in on all sides, set the
+% typeblock to fill to the margins. We do this when the class is loaded
+% so it takes into account any changes to the fonts and type
+% size made using the class options, but not anything done later
+% after the class is called. Since memoir will set the line
+% width to \textwidth when it first computes the default type block
+% size, we have to reset that after we change the type block.
+
+\DeclareOption{fullpage}{
+  \AtEndOfClass{\fullpagethesis}}
+
+% manuscript sets the typeblock to approximately 72 characters by 25
+% lines at 12pt and using double line spacing and sets left and right
+% margins evenly.
+              
+\DeclareOption{manuscript}{
+  \PassOptionsToClass{12pt}{memoir}
+  \ExecuteOptions{doublespaced}
+  \AtEndOfClass{\manuscriptthesis}}
+
+% All other options are passed to the base class directly.
+
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
 
+% By default, typeset with one half spacing, no running heads, 11 pt
+
 \ExecuteOptions{onehalfspaced,plain}
+
+% Tell memoir the document has to be one-sided (i.e., don't switch
+% margins, etc.) and don't add empty pages before new chapters
+
 \PassOptionsToClass{openany,oneside,11pt}{memoir}
 \ProcessOptions
 
@@ -45,15 +87,22 @@
 
 \LoadClass{memoir}
 
-\usepackage[T1]{fontenc}
+\newcommand{\fullpagethesis}{%
+  \settypeblocksize{9in}{6.5in}{*}%
+  \setlrmarginsandblock{1in}{*}{*}%
+  \setulmarginsandblock{1in}{*}{*}%
+  \checkandfixthelayout}
+
+\newcommand{\manuscriptthesis}{%
+  \setlxvchars
+  \settypeblocksize{25\baselineskip}{1.1\lxvchars}{*}%
+  \setlrmargins{*}{*}{*}%
+  \setulmargins{*}{*}{*}%
+  \checkandfixthelayout}
 
 \newcommand{\makethesistitle}{
   \begin{titlingpage*}
-<<<<<<< HEAD
     \begin{center}\begin{DoubleSpace}
-=======
-    \begin{center}
->>>>>>> f293e2eb25161fe287e45df307f14589b62de069
       UNIVERSITY OF CALGARY \\
       \vfill
       {\@title \par}
@@ -72,12 +121,8 @@
       {CALGARY, ALBERTA \par}
       {{\@monthname}, {\@gradyear} \par}
       \vfill
-      {\copyright\ {\@author}~~{\@gradyear} \par}
-<<<<<<< HEAD
+      {\copyright\ {\@author}~{\@gradyear} \par}
     \end{DoubleSpace}\end{center}
-=======
-    \end{center}
->>>>>>> f293e2eb25161fe287e45df307f14589b62de069
   \end{titlingpage*}
 }
 
