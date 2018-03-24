@@ -49,7 +49,11 @@
 
 \newcommand{\makethesistitle}{
   \begin{titlingpage*}
+<<<<<<< HEAD
     \begin{center}\begin{DoubleSpace}
+=======
+    \begin{center}
+>>>>>>> f293e2eb25161fe287e45df307f14589b62de069
       UNIVERSITY OF CALGARY \\
       \vfill
       {\@title \par}
@@ -69,7 +73,11 @@
       {{\@monthname}, {\@gradyear} \par}
       \vfill
       {\copyright\ {\@author}~~{\@gradyear} \par}
+<<<<<<< HEAD
     \end{DoubleSpace}\end{center}
+=======
+    \end{center}
+>>>>>>> f293e2eb25161fe287e45df307f14589b62de069
   \end{titlingpage*}
 }
 
