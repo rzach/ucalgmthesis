@@ -51,15 +51,16 @@ Class options
 
 The class takes a number of options:
 
-- `singlespaced`, `onehalfspaced`, doublespaced` sets up the line
+- `singlespaced`, `onehalfspaced`, `doublespaced` sets up the line
   spacing (`onehalfspaced` is the default).
 
 - `palatino`, `times`, `garamond`, `utopia`, `libertine` offer some nice
   alternative typefaces (i.e., fonts) to the default Computer Modern.
 
-- `headers` produces running heads (which, per guidelines, must not
-  be the thesis title or author's name, and must be separated from the
-  main text by a line).
+- `headers` produces running heads. Per the guidelines, must not be
+  the thesis title or author's name, and must be separated from the
+  main text by a line. The class uses the chapter number and title and
+  places it flush right in the header.
 
 - `fullpage` calls `\fullpagethesis`, so produces a thesis with 1"
   margins all around. This produces very long lines and is not
