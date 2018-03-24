@@ -102,7 +102,7 @@ much to switch to `ucalgmthesis`:
   for dissertations or books. Pick a different one! But if you do want
   Times, use the `times` class option instead and delete this
   line. (The class option loads the newer
-  `[newtx](https://ctan.org/pkg/newtx?lang=en)` packages.)
+  [`newtx`](https://ctan.org/pkg/newtx?lang=en) packages.)
 
 - Delete all the lines from the template that say `\pagenumbering`,
   `\newpage`, `\clearpage`, `\phantomsection`, `\setcounter`,
