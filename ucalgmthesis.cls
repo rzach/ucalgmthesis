@@ -1,8 +1,9 @@
-% ucalgmthesis class ================== A LaTeX class for producing
-% thesis documents confomrin to the University of Calgary Faculty of
-% Graduate Study formatting rules.
+% ucalgmthesis class
+% ==================
+% A LaTeX class for producing thesis documents conforming to the
+% University of Calgary Faculty of Graduate Study formatting rules.
 
-\ProvidesClass{ucalgmthesis}[2017/03/23
+\ProvidesClass{ucalgmthesis}[2017/03/27
   University of Calgary Memoir Thesis Class]
 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
@@ -31,11 +32,14 @@
                   \usepackage{amsthm} % load amsthm before newtxmath
                   \usepackage{newtxtext,newtxmath}}}
 \DeclareOption{garamond}
-              {\AtEndOfClass{\usepackage[garamond]{mathdesign}
-                  \usepackage[osf]{garamondx}}}
+              {\AtEndOfClass{\usepackage[T1]{fontenc}
+                  \usepackage[garamond]{mathdesign}
+                  \usepackage[osf]{garamondx}
+                  \fixmdhrulefill}}
 \DeclareOption{utopia}
               {\AtEndOfClass{\usepackage[T1]{fontenc}
-                  \usepackage[utopia]{mathdesign}}}
+                  \usepackage[utopia]{mathdesign}
+                  \fixmdhrulefill}}
 \DeclareOption{libertine}
               {\AtEndOfClass{\usepackage[T1]{fontenc}
                   \usepackage{amsthm} % load amsthm before newtxmath
@@ -87,6 +91,10 @@
 
 \LoadClass{memoir}
 
+% Commands to set up type block and margins based on selected typeface
+% and size. These are called after the class loads, but before the
+% rest of the preamble.
+
 \newcommand{\fullpagethesis}{%
   \settypeblocksize{9in}{6.5in}{*}%
   \setlrmarginsandblock{1in}{*}{*}%
@@ -99,6 +107,13 @@
   \setlrmargins{*}{*}{*}%
   \setulmargins{*}{*}{*}%
   \checkandfixthelayout}
+
+% fix a bug in mathdesign
+
+\newcommand*{\fixmdhrulefill}{\def\hrulefill{\leavevmode\leaders \hrule height \rulethickness \hfill\kern\z@}}
+
+
+% \makethesistitle formats the title page
 
 \newcommand{\makethesistitle}{
   \begin{titlingpage*}
@@ -144,10 +159,17 @@
 \thesis{Thesis}
 
 % Ruled pagestyle according to rules: folio centered in footer,
-% headers with a rule
+% headers with a rule. Chapter number and title flush right.
+% Also works twosided.
 
 \copypagestyle{ucalgaryruled}{ruled}
-\makeoddhead{ucalgaryruled}{}{}{\leftmark}
+\if@twoside
+    \makeevenhead{ucalgaryruled}{\leftmark}{}{}
+    \makeoddhead{ucalgaryruled}{}{}{\rightmark}
+\else
+    \makeoddhead{ucalgaryruled}{}{}{\leftmark}
+\fi
+
 \makeoddfoot{ucalgaryruled}{}{\thepage}{}
 
 % Since the TOC must include eveyrthing in the front matter, the

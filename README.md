@@ -123,3 +123,17 @@ left and right margins to 1 inch. This will change the number of pages
 in the PDF and may result in some displayed formulas and tables not
 fitting into the type block anymore. So be sure to check the result
 for such problems.
+
+Troubleshooting and Known Issues
+--------------------------------
+
+- The font options may interact badly with other packages you
+  load. Try compiling without the font option to see if that's the
+  problem.
+
+- Times, Palatino, and Libertine load the `newtxmath` or `newpxmath`
+  packages. These have to be loaded after `amsthm`, so the class loads
+  `amsthm` before it sets up these fonts.
+
+- Garamond and Utopia use the `mathdesign` package, which has a buggy
+  `\hrulefill` command. The package tries to correct this.,
