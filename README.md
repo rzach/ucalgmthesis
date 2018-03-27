@@ -15,6 +15,43 @@ LaTeX classes, so all standard LaTeX commands such as `\chapter`,
 options can be passed as options to `ucalgmthesis`, in particular
 `12pt` to select 12 point type (11 point is the default).
 
+Usage
+-----
+
+Consult the file `sample-thesis.tex` to for an example thesis setup
+with parts `\incldue`'d from separate files. Here's a minimal file:
+```
+\documentclass{ucalgmthesis}
+
+\author{...}
+\title{...}
+\prog{...}
+\degree{...}
+\thesisyear{...}
+\monthname{...}
+
+\begin{document}
+
+\frontmatter
+
+\makethesistitle
+
+\chapter{Abstract}
+
+...
+
+\tableofcontents
+
+\mainmatter
+
+...
+
+\backmatter
+
+....
+\end{document}
+```
+
 Commands
 --------
 
@@ -136,4 +173,4 @@ Troubleshooting and Known Issues
   `amsthm` before it sets up these fonts.
 
 - Garamond and Utopia use the `mathdesign` package, which has a buggy
-  `\hrulefill` command. The package tries to correct this.,
+  `\hrulefill` command. The package tries to correct this.
