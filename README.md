@@ -170,7 +170,24 @@ Troubleshooting and Known Issues
 
 - Times, Palatino, and Libertine load the `newtxmath` or `newpxmath`
   packages. These have to be loaded after `amsthm`, so the class loads
-  `amsthm` before it sets up these fonts.
+  `amsthm` before it sets up these fonts. If you don't want that,
+  leave out the font option, load the font in your main document
+  preamble, then call `\manuscriptthesis` or `\fullpagethesis` to set
+  the right page dimensions based on the new font.
 
 - Garamond and Utopia use the `mathdesign` package, which has a buggy
   `\hrulefill` command. The package tries to correct this.
+
+- The guidelines require that the official filed thesis is laid out
+  for one-sided printing (equal left and right margins). You may want
+  to print the thesis two-sided, however, e.g., to give a nice bound
+  copy to your supervisor or your mom. You can produce a version for
+  two-sided printing using the `twoside` class option of `memoir`. The
+  page layout will be altered to have spine and edge margins in the
+  golden ratio, and alternating on rectos and versos. This will
+  produce a nicer-looking spread. However, both `\makethesistitle` and
+  `\mainmatter` clear to a recto (odd) page even with the `openany`
+  option, and so `twoside` will produce additional blank pages in the
+  front matter. The main text, however, should have the same
+  pagination as the "official" one-sided version, as the size of the
+  typeblock is the same.

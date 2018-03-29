@@ -3,7 +3,7 @@
 % A LaTeX class for producing thesis documents conforming to the
 % University of Calgary Faculty of Graduate Study formatting rules.
 
-\ProvidesClass{ucalgmthesis}[2017/03/27
+\ProvidesClass{ucalgmthesis}[2017/03/29
   University of Calgary Memoir Thesis Class]
 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
@@ -95,16 +95,23 @@
 % and size. These are called after the class loads, but before the
 % rest of the preamble.
 
+% fullpagethesis sets the margins to 1in on all sides, so maximum
+% allowed space is used.
+
 \newcommand{\fullpagethesis}{%
   \settypeblocksize{9in}{6.5in}{*}%
   \setlrmarginsandblock{1in}{*}{*}%
   \setulmarginsandblock{1in}{*}{*}%
   \checkandfixthelayout}
 
+% \manuscriptthesis sets the typeblock to 25 lines per 72 characters
+% (approx.) per line, and vertically centers the page. Left and right
+% margins are left to memoir: equal margins for onesided (default),
+% wider outside margins for twosided.
+
 \newcommand{\manuscriptthesis}{%
   \setlxvchars
   \settypeblocksize{25\baselineskip}{1.1\lxvchars}{*}%
-  \setlrmargins{*}{*}{*}%
   \setulmargins{*}{*}{*}%
   \checkandfixthelayout}
 
@@ -159,8 +166,9 @@
 \thesis{Thesis}
 
 % Ruled pagestyle according to rules: folio centered in footer,
-% headers with a rule. Chapter number and title flush right.
-% Also works twosided.
+% headers with a rule. Chapter number and title flush right.  Also
+% works twosided, in which case the verso headers hold the chapter
+% title and the recto headers the section title.
 
 \copypagestyle{ucalgaryruled}{ruled}
 \if@twoside
@@ -171,8 +179,9 @@
 \fi
 
 \makeoddfoot{ucalgaryruled}{}{\thepage}{}
+\makeevenfoot{ucalgaryruled}{}{\thepage}{}
 
-% Since the TOC must include eveyrthing in the front matter, the
+% Since the TOC must include everything in the front matter, the
 % default TOC style looks odd. We reduce the space between chapter
 % entries and add dotted leaders also to chapters.
 
