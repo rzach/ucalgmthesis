@@ -2,8 +2,16 @@
 % ==================
 % A LaTeX class for producing thesis documents conforming to the
 % University of Calgary Faculty of Graduate Study formatting rules.
+%
+% Richard Zach
+%
+% The latest version of the class is available at
+% https://github.com/rzach/ucalgmthesis
+%
+% Distributed under the terms of the MIT License
+% https://opensource.org/licenses/MIT
 
-\ProvidesClass{ucalgmthesis}[2017/03/29
+\ProvidesClass{ucalgmthesis}[2019/03/30
   University of Calgary Memoir Thesis Class]
 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
@@ -118,7 +126,6 @@
 % fix a bug in mathdesign
 
 \newcommand*{\fixmdhrulefill}{\def\hrulefill{\leavevmode\leaders \hrule height \rulethickness \hfill\kern\z@}}
-
 
 % \makethesistitle formats the title page
 

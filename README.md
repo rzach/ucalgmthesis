@@ -1,5 +1,5 @@
-ucalgary-memoir-thesis
-======================
+ucalgmthesis
+============
 
 `ucalgmthesis.cls` is a LaTeX class file that produces documents
 according to the thesis guidelines of the [University of Calgary
@@ -15,11 +15,18 @@ LaTeX classes, so all standard LaTeX commands such as `\chapter`,
 options can be passed as options to `ucalgmthesis`, in particular
 `12pt` to select 12 point type (11 point is the default).
 
+License
+-------
+
+The files in this directory are provided under the terms of the MIT
+License. `natbib-oup.bst` is provided under the terms of the LaTeX
+Project Public License.
+
 Usage
 -----
 
-Consult the file `sample-thesis.tex` to for an example thesis setup
-with parts `\incldue`'d from separate files. Here's a minimal file:
+Consult the file `sample-thesis.tex` for an example thesis setup
+with parts `\include`'d from separate files. Here's a minimal file:
 ```
 \documentclass{ucalgmthesis}
 
@@ -168,14 +175,15 @@ Troubleshooting and Known Issues
   load. Try compiling without the font option to see if that's the
   problem.
 
-- Times, Palatino, and Libertine load the `newtxmath` or `newpxmath`
-  packages. These have to be loaded after `amsthm`, so the class loads
-  `amsthm` before it sets up these fonts. If you don't want that,
-  leave out the font option, load the font in your main document
-  preamble, then call `\manuscriptthesis` or `\fullpagethesis` to set
-  the right page dimensions based on the new font.
+- `times`, `palatino`, and `libertine` options load the `newtxmath` or
+  `newpxmath` packages. These have to be loaded after `amsthm`, so the
+  class loads `amsthm` before it sets up these fonts. If you don't
+  want that, leave out the font option, load the font in your main
+  document preamble, then call `\manuscriptthesis` or
+  `\fullpagethesis` to set the right page dimensions based on the new
+  font.
 
-- Garamond and Utopia use the `mathdesign` package, which has a buggy
+- `garamond` and `utopia` use the `mathdesign` package, which has a buggy
   `\hrulefill` command. The package tries to correct this.
 
 - The guidelines require that the official filed thesis is laid out
@@ -185,9 +193,9 @@ Troubleshooting and Known Issues
   two-sided printing using the `twoside` class option of `memoir`. The
   page layout will be altered to have spine and edge margins in the
   golden ratio, and alternating on rectos and versos. This will
-  produce a nicer-looking spread. However, both `\makethesistitle` and
-  `\mainmatter` clear to a recto (odd) page even with the `openany`
-  option, and so `twoside` will produce additional blank pages in the
-  front matter. The main text, however, should have the same
-  pagination as the "official" one-sided version, as the size of the
-  typeblock is the same.
+  produce a nicer-looking page spread. However, both
+  `\makethesistitle` and `\mainmatter` clear to a recto (odd) page
+  even with the `openany` option, and so `twoside` will produce
+  additional blank pages in the front matter. The main text, however,
+  should have the same pagination as the "official" one-sided version,
+  as the size of the typeblock is the same.
