@@ -11,7 +11,7 @@
 % Distributed under the terms of the MIT License
 % https://opensource.org/licenses/MIT
 
-\ProvidesClass{ucalgmthesis}[2019/03/30
+\ProvidesClass{ucalgmthesis}[2019/04/02
   University of Calgary Memoir Thesis Class]
 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
