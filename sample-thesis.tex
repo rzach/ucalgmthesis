@@ -1,24 +1,28 @@
 % A Sample Thesis for the University of Calgary
 % =============================================
 
-% Load the UCalgary Memoir Thesis class. By default (without options),
-% this produces a 1-1/2 spaced thesis in 11 point font without running
-% heads. Use package options singlespaced or doublespaced for single
-% or double line spacing. The default font is LaTeX's Computer
-% Modern. Use package options times, palatino, libertine, garamond, or
-% utopia for other nice typefaces. (You may need to install the
-% relevant packages to get these to work.) Use package option headers
-% if you want running heads. Use option fullpage if you want the text
-% to occupy all allowable space (1 inch margins all around), or option
-% manuscript if you want a page layout suitable for reviewing and
-% proof reading. Option manuscript selects 12 pt type, doublespaced,
-% approx. 25 lines per page, with approx. 72 characters per line. You
-% may want to remove the option for the version you file in the Vault;
-% it looks nicer and is a bit more compact. You can also use any
-% options that the memoir class recognizes, such as 10pt for 10 point
-% font, 11pt for 11 point font, 12pt for 12 point type,
-% etc. Documentation of the memoir package can be found at
-% https://ctan.org/pkg/memoir?lang=en
+% This is a sample LaTeX document to build a University of Calgary
+% graduate thesis according to the guidelines of the Faculty of
+% Graduate Studies, available here:
+% https://grad.ucalgary.ca/current-students/thesis-based-students/thesis/building-thesis
+
+% To use this sample for your own thesis, rename this file, make any changes
+% necessary, then add the content of your thesis t othe included files
+% frontmatter.tex, chapter1.tex, etc.
+
+% First, we load the UCalgary Memoir Thesis class ucalgmthesis,
+% available at https://github.com/rzach/ucalgmthesis
+
+% By default (without options), this produces a 1-1/2 spaced thesis in
+% 11 point font without running heads. See the README file for a
+% description of all package options.
+
+% In our sample we give three options: Option utopia sets the thesis in a
+% nice font. Option headers produces running heads. Option manuscript
+% formats the page in a way suitable for reading and commenting: 12 pt type,
+% double spaced, approx. 25 lines per page, with approx. 72 characters
+% per line. For filing in the Vault, remove that option to produce a
+% more compact thesis with a slightly better layout.
 
 \documentclass[utopia,headers,manuscript]{ucalgmthesis}
 
@@ -37,8 +41,7 @@
 \usepackage{microtype}
 
 % We'll need some colored links, so we load xcolor and hyperref. But
-% you can take that out if you don't want links at all or are happy
-% with the standard garish colored boxes.
+% you can take that out if you don't want links at all.
 
 \usepackage[dvipsnames]{xcolor}
 
@@ -100,7 +103,7 @@
 
 % The year
 
-\thesisyear{2018}
+\thesisyear{2019}
 
 % Tell hyperref to put author and title into the PDF metadata
 
@@ -122,6 +125,8 @@
 % thesis, say
 
 % \includeonly{titlepage}
+
+% and then copy the resulting PDF to a separate file.
 
 \begin{document}
 
@@ -153,8 +158,9 @@
 
 \include{backmatter}
 
-% The appendix contains material that would clutter up the main
-% text. Remove it if you don't have an appendix.
+% The appendix contains material that would clutter up the main text,
+% such as program code, survey instruments, or interview transcripts.
+% Remove it if you don't have an appendix.
 
 \appendix
 

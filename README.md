@@ -59,6 +59,11 @@ with parts `\include`'d from separate files. Here's a minimal file:
 \end{document}
 ```
 
+The easiest way to get started is perhaps to rename
+`sample-thesis.tex`, change the metadata and layout options to your
+liking, and put the content of your thesis into the files it includes
+(`frontmatter.tex`, `chapter1.tex`, etc.)
+
 Commands
 --------
 
@@ -98,13 +103,17 @@ The class takes a number of options:
 - `singlespaced`, `onehalfspaced`, `doublespaced` sets up the line
   spacing (`onehalfspaced` is the default).
 
-- `palatino`, `times`, `garamond`, `utopia`, `libertine` offer some nice
-  alternative typefaces (i.e., fonts) to the default Computer Modern.
+- `palatino`, `times`, `garamond`, `utopia`, `libertine` offer some
+  nice alternative typefaces (i.e., fonts) to the default Computer
+  Modern. Note that `garamond` uses the
+  [`garamondx`](https://ctan.org/tex-archive/fonts/garamondx?lang=en)
+  package, which is not included in the TeXLive distibution (and is
+  not available on Overleaf).
 
-- `headers` produces running heads. Per the guidelines, must not be
-  the thesis title or author's name, and must be separated from the
-  main text by a line. The class uses the chapter number and title and
-  places it flush right in the header.
+- `headers` produces running heads. Per the guidelines, the running
+  heads must not be the thesis title or author's name, and must be
+  separated from the main text by a line. The class uses the chapter
+  number and title and places it flush right in the header.
 
 - `fullpage` calls `\fullpagethesis`, so produces a thesis with 1"
   margins all around. This produces very long lines and is not
@@ -185,6 +194,12 @@ Troubleshooting and Known Issues
 
 - `garamond` and `utopia` use the `mathdesign` package, which has a buggy
   `\hrulefill` command. The package tries to correct this.
+
+- `garamond` uses the `garamondx` package. This package has a
+  restrictive license and is thus not included in the TeXLive
+  distribution. Use the
+  [`getnonfreefonts`](https://www.tug.org/fonts/getnonfreefonts/)
+  installer to download it.
 
 - The guidelines require that the official filed thesis is laid out
   for one-sided printing (equal left and right margins). You may want

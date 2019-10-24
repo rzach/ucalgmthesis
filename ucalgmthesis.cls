@@ -11,7 +11,7 @@
 % Distributed under the terms of the MIT License
 % https://opensource.org/licenses/MIT
 
-\ProvidesClass{ucalgmthesis}[2019/04/02
+\ProvidesClass{ucalgmthesis}[2019/10/24
   University of Calgary Memoir Thesis Class]
 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
@@ -85,12 +85,12 @@
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
 
-% By default, typeset with one half spacing, no running heads, 11 pt
+% By default, typeset with one half spacing, no running heads
 
 \ExecuteOptions{onehalfspaced,plain}
 
 % Tell memoir the document has to be one-sided (i.e., don't switch
-% margins, etc.) and don't add empty pages before new chapters
+% margins, etc.), 11 pt, and don't add empty pages before new chapters
 
 \PassOptionsToClass{openany,oneside,11pt}{memoir}
 \ProcessOptions
@@ -119,8 +119,13 @@
 
 \newcommand{\manuscriptthesis}{%
   \setlxvchars
-  \settypeblocksize{25\baselineskip}{1.1\lxvchars}{*}%
-  \setulmargins{*}{*}{*}%
+  \settypeblocksize{25\baselineskip}{1.1\lxvchars}{*}
+  \if@twoside
+    \setlrmargins{*}{*}{1.618}
+  \else
+    \setlrmargins{*}{*}{1}
+  \fi
+  \setulmargins{*}{*}{*}
   \checkandfixthelayout}
 
 % fix a bug in mathdesign
