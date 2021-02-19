@@ -184,16 +184,12 @@ Troubleshooting and Known Issues
   load. Try compiling without the font option to see if that's the
   problem.
 
-- `times`, `palatino`, and `libertine` options load the `newtxmath` or
-  `newpxmath` packages. These have to be loaded after `amsthm`, so the
-  class loads `amsthm` before it sets up these fonts. If you don't
-  want that, leave out the font option, load the font in your main
-  document preamble, then call `\manuscriptthesis` or
-  `\fullpagethesis` to set the right page dimensions based on the new
-  font.
-
-- `garamond` and `utopia` use the `mathdesign` package, which has a buggy
-  `\hrulefill` command. The package tries to correct this.
+- The font options all load the `newtxmath` or `newpxmath` packages.
+  These have to be loaded after `amsthm`, so the class loads `amsthm`
+  before it sets up these fonts. If you don't want that, leave out the
+  font option, load the font in your main document preamble, then call
+  `\manuscriptthesis` or `\fullpagethesis` to set the right page
+  dimensions based on the new font.
 
 - `garamond` uses the `garamondx` package. This package has a
   restrictive license and is thus not included in the TeXLive

@@ -7,7 +7,7 @@
 % https://grad.ucalgary.ca/current-students/thesis-based-students/thesis/building-thesis
 
 % To use this sample for your own thesis, rename this file, make any changes
-% necessary, then add the content of your thesis t othe included files
+% necessary, then add the content of your thesis to the included files
 % frontmatter.tex, chapter1.tex, etc.
 
 % First, we load the UCalgary Memoir Thesis class ucalgmthesis,
@@ -17,9 +17,16 @@
 % 11 point font without running heads. See the README file for a
 % description of all package options.
 
-% In our sample we give three options: Option utopia sets the thesis in a
-% nice font. Option headers produces running heads. Option manuscript
-% formats the page in a way suitable for reading and commenting: 12 pt type,
+% In our sample we give three options: Option "utopia" sets the thesis
+% in a nice font: Utopia in this case. Other font options are "times",
+% "garamond", "palatino", and "libertine". Try them out to see what
+% you like best.  If you do not provide a font option, the thesis is
+% set in LaTeX's Computer Modern font. 
+
+% Option "headers" produces running heads. 
+
+% Option "manuscript" formats
+% the page in a way suitable for reading and commenting: 12 pt type,
 % double spaced, approx. 25 lines per page, with approx. 72 characters
 % per line. For filing in the Vault, remove that option to produce a
 % more compact thesis with a slightly better layout.
@@ -51,7 +58,7 @@
 
 \usepackage[colorlinks,allcolors=MidnightBlue]{hyperref} 
 
-% For black links, 
+% For black links, replace the above with:
 % \usepackage[hidelinks]{hyperref}
 
 % If you prefer hyperref's boxes around links (which don't print), you
@@ -69,7 +76,7 @@
 
 % For author-year references, you probably want to use natbib with a
 % bibliography style appropriate for your discipline; or check out
-% latexbib!
+% biblatex!
 
 \usepackage[round]{natbib}
 \bibliographystyle{plainnat}
@@ -93,7 +100,10 @@
 
 \degree{Doctor of Philosophy}
 
-% The name of the graduate program (not the department!)
+% The full name of the graduate program (not the department!). For
+% interdisciplinary degrees, the home graduate program is listed
+% first, followed by the word "and," then the other graduate program
+% is listed
 
 \prog{Graduate Program in Philosophy}
 
@@ -103,7 +113,7 @@
 
 % The year
 
-\thesisyear{2019}
+\thesisyear{2021}
 
 % Tell hyperref to put author and title into the PDF metadata
 
@@ -127,6 +137,11 @@
 % \includeonly{titlepage}
 
 % and then copy the resulting PDF to a separate file.
+
+% Memoir by default numbers document divisions from sections up. If
+% you want subsections numbered as well, uncomment the following line:
+
+% \maxsecnumdepth{subsection}
 
 \begin{document}
 
@@ -152,7 +167,7 @@
 \include{chapter2}
 
 % The back matter includes commands to produce endnotes, index,
-% glossary, bibiliography, and the like.
+% glossary, bibliography, and the like.
 
 \backmatter
 

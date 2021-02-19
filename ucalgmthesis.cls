@@ -41,18 +41,19 @@
                   \usepackage{newtxtext,newtxmath}}}
 \DeclareOption{garamond}
               {\AtEndOfClass{\usepackage[T1]{fontenc}
-                  \usepackage[garamond]{mathdesign}
-                  \usepackage[osf]{garamondx}
-                  \fixmdhrulefill}}
+                \usepackage{amsthm} % load amsthm before newtxmath
+                \usepackage{garamondx}
+                \usepackage[garamondx,cmbraces]{newtxmath}}}
 \DeclareOption{utopia}
               {\AtEndOfClass{\usepackage[T1]{fontenc}
-                  \usepackage[utopia]{mathdesign}
-                  \fixmdhrulefill}}
+                \usepackage{amsthm} % load amsthm before newtxmath
+                \usepackage{erewhon}
+                \usepackage[utopia,vvarbb]{newtxmath}}}
 \DeclareOption{libertine}
               {\AtEndOfClass{\usepackage[T1]{fontenc}
-                  \usepackage{amsthm} % load amsthm before newtxmath
-                  \usepackage{libertine}
-                  \usepackage[libertine]{newtxmath}}}
+                \usepackage{amsthm} % load amsthm before newtxmath
+                \usepackage{libertine}
+                \usepackage[libertine]{newtxmath}}}
               
 % options for headings
 
