@@ -202,8 +202,8 @@
 \renewcommand{\cftchapterleader}{\normalfont\cftdotfill{\cftsectiondotsep}}
 \renewcommand{\contentsname}{Table of Contents}
 
-% we need toc, lof, lot to begin on a new page
+% We need toc, lof, lot to begin on a new page
 
-\def\tocheadstart{\clearpage}
-\def\lofheadstart{\clearpage}
-\def\lotheadstart{\clearpage}
+\addtodef{\tableofcontents}{\clearpage}{}
+\addtodef{\listoffigures}{\clearpage}{}
+\addtodef{\listoftables}{\clearpage}{}
