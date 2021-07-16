@@ -33,24 +33,14 @@
 
 \documentclass[utopia,headers,manuscript]{ucalgmthesis}
 
-% Using LaTeX? Then you're probably using math, and so you want to use
-% the AMS math commands and define some theorem environments! But you
-% can take these out or use your own favorite theorem package.
-
-\usepackage{amsmath,amsthm}
-
-\newtheorem{thm}{Theorem}
-\theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition} % please number all of them together!
-
-% microtype makes everything look better
-
-\usepackage{microtype}
-
 % We'll need some colored links, so we load xcolor and hyperref. But
 % you can take that out if you don't want links at all.
 
 \usepackage[dvipsnames]{xcolor}
+
+% microtype makes everything look better
+
+\usepackage{microtype}
 
 % You can turn off the boxes around links made by hyperref. Then links
 % will appear in a different color, and per guidelines, all links must
@@ -73,6 +63,16 @@
 % easy navigation.
 
 \usepackage[numbered]{bookmark}
+
+% Using LaTeX? Then you're probably using math, and so you want to use
+% the AMS math commands and define some theorem environments! But you
+% can take these out or use your own favorite theorem package.
+
+\usepackage{amsmath,amsthm}
+
+\newtheorem{thm}{Theorem}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition} % please number all of them together!
 
 % For author-year references, you probably want to use natbib with a
 % bibliography style appropriate for your discipline; or check out
