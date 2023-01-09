@@ -11,7 +11,7 @@
 % Distributed under the terms of the MIT License
 % https://opensource.org/licenses/MIT
 
-\ProvidesClass{ucalgmthesis}[2019/10/24
+\ProvidesClass{ucalgmthesis}[2023/01/09
   University of Calgary Memoir Thesis Class]
 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
@@ -148,13 +148,13 @@
       \vfill
       {A \@thesis} \par
       SUBMITTED TO THE FACULTY OF GRADUATE STUDIES \par
-      IN PARTIAL FULFILLMENT OF THE REQUIREMENTS FOR THE \par
+      IN PARTIAL FULFILMENT OF THE REQUIREMENTS FOR THE \par
       {DEGREE OF \@degree}
       \vfill
       \@dept \par
       \vfill
       {CALGARY, ALBERTA \par}
-      {{\@monthname}, {\@gradyear} \par}
+      {\MakeUppercase{\@monthname}, {\@gradyear} \par}
       \vfill
       {\copyright\ {\@author}~{\@gradyear} \par}
     \end{DoubleSpace}\end{center}
