@@ -172,7 +172,7 @@
 \def\dept#1{\gdef\@dept{\uppercase{#1}}}
 \let\prog\dept % compatibility with ucalgthes class
 \def\degree#1{\gdef\@degree{\uppercase{#1}}}
-\def\monthname#1{\gdef\@monthname{#1}}
+\def\monthname#1{\gdef\@monthname{\uppercase{#1}}}
 \def\gradyear#1{\gdef\@gradyear{#1}}
 \let\thesisyear\gradyear
 \def\thesis#1{\gdef\@thesis{\uppercase{#1}}}
