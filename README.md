@@ -4,7 +4,7 @@ ucalgmthesis
 `ucalgmthesis.cls` is a LaTeX class file that produces documents
 according to the thesis guidelines of the [University of Calgary
 Faculty of Graduate
-Studies](http://www.grad.ucalgary.ca/current/thesis/guidelines). It
+Studies](https://grad.ucalgary.ca/current-students/thesis-based-students/thesis/building-thesis). It
 uses the [`memoir`](https://ctan.org/pkg/memoir?lang=en) class, which
 provides very powerful and flexible mechanisms for book design and
 layout. All `memoir` commands for changing chapter and section
