@@ -64,6 +64,14 @@ The easiest way to get started is perhaps to rename
 liking, and put the content of your thesis into the files it includes
 (`frontmatter.tex`, `chapter1.tex`, etc.)
 
+`ucalgmthesis` is part of TeXLive and MikTeX. If you have one of these
+installed (or you are working on Overleaf), you do not need the class file
+`ucalgmthesis.cls` itself in your thesis directory. You can just copy
+the TeX and Bib file from the source directory in your TeXLive tree,
+from [CTAN](https://ctan.org/tex-archive/macros/latex/contrib/ucalgmthesis),
+or from the [GitHub
+repository](https://github.com/rzach/ucalgmthesis) to get started.
+
 Commands
 --------
 

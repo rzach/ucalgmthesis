@@ -6,30 +6,34 @@
 % Graduate Studies, available here:
 % https://grad.ucalgary.ca/current-students/thesis-based-students/thesis/building-thesis
 
-% To use this sample for your own thesis, rename this file, make any changes
-% necessary, then add the content of your thesis to the included files
-% frontmatter.tex, chapter1.tex, etc.
+% To use this sample for your own thesis, rename this file, make any
+% changes necessary, then add the content of your thesis to the
+% included files frontmatter.tex, chapter1.tex, etc.
 
 % First, we load the UCalgary Memoir Thesis class ucalgmthesis,
 % available at https://github.com/rzach/ucalgmthesis
 
-% By default (without options), this produces a 1-1/2 spaced thesis in
-% 11 point font without running heads. See the README file for a
-% description of all package options.
+% This class in turn loads the memoir class for book design. All its
+% commands and options are available to you. See
+% https://ctan.org/pkg/memoir
+
+% By default (without options), the class produces a 1-1/2 spaced
+% thesis in 11 point font without running heads. See the README file
+% for a description of all package options.
 
 % In our sample we give three options: Option "utopia" sets the thesis
 % in a nice font: Utopia in this case. Other font options are "times",
 % "garamond", "palatino", and "libertine". Try them out to see what
 % you like best.  If you do not provide a font option, the thesis is
-% set in LaTeX's Computer Modern font. 
+% set in LaTeX's standard Computer Modern font. 
 
 % Option "headers" produces running heads. 
 
-% Option "manuscript" formats
-% the page in a way suitable for reading and commenting: 12 pt type,
-% double spaced, approx. 25 lines per page, with approx. 72 characters
-% per line. For filing in the Vault, remove that option to produce a
-% more compact thesis with a slightly better layout.
+% Option "manuscript" formats the page in a way suitable for reading
+% and commenting: 12 pt type, double spaced, approx. 25 lines per
+% page, with approx. 72 characters per line. For filing in the Vault,
+% remove that option to produce a more compact thesis with a slightly
+% better layout.
 
 \documentclass[utopia,headers,manuscript]{ucalgmthesis}
 
@@ -42,21 +46,30 @@
 
 \usepackage{microtype}
 
+% The hyperref package produces hyperlinks in your document.
+
+\usepackage{hyperref}
+
 % You can turn off the boxes around links made by hyperref. Then links
 % will appear in a different color, and per guidelines, all links must
 % be blue or black. For blue links say
 
-\usepackage[colorlinks,allcolors=MidnightBlue]{hyperref} 
+\hypersetup{colorlinks,allcolors=MidnightBlue} 
 
-% For black links, replace the above with:
-% \usepackage[hidelinks]{hyperref}
+% For black (hidden) links, replace the above with:
+
+%\hypersetup{hidelinks}
+
+% Note that per UCalgary's thesis guidelines, links must be blue or
+% black.
 
 % If you prefer hyperref's boxes around links (which don't print), you
 % can also change their color. With boxes around links, you probably
 % don't want everything in the table of contents to be a link, so we
-% only make the page numbers links.
-%
-% \usepackage[allbordercolors=Periwinkle,linktocpage]{hyperref}
+% only make the page numbers links. This is done by using the
+% following command instead:
+
+% \hypersetup{allbordercolors=Periwinkle,linktocpage}
 
 % The table of contents in your PDF reader's sidebar is just titles by
 % default, but it's nice to also have chapter and section numbers for
@@ -70,7 +83,7 @@
 
 \usepackage{amsmath,amsthm}
 
-\newtheorem{thm}{Theorem}
+\newtheorem{thm}{Theorem}[chapter] % let's number things by chapter
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition} % please number all of them together!
 
@@ -113,7 +126,7 @@
 
 % The year
 
-\thesisyear{2021}
+\thesisyear{2023}
 
 % Tell hyperref to put author and title into the PDF metadata
 
